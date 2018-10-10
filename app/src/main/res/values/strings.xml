@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SunCalculatorJava</string>
+    <string name="refresh">Refresh</string>
+    <string name="settings">Settings</string>
 </resources>

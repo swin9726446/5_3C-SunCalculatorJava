@@ -3,8 +3,12 @@ package au.edu.swin.sdmd.suncalculatorjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,6 +18,12 @@ import java.util.TimeZone;
 import au.edu.swin.sdmd.suncalculatorjava.calc.AstronomicalCalendar;
 import au.edu.swin.sdmd.suncalculatorjava.calc.GeoLocation;
 
+/**
+ * Initial code by NRonald.
+ * Menu added by swin9726446
+ * with guidance from http://www.vogella.com/tutorials/AndroidActionBar/article.html
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -59,5 +69,27 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            //call refresh
+            case R.id.action_refresh:
+                Toast.makeText(this, "Refresh Selected", Toast.LENGTH_SHORT).show();
+                break;
+            //call snettings
+            case R.id.action_settings:
+                Toast.makeText(this, "Snettings tiem", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+        return true;
+    }
 }
